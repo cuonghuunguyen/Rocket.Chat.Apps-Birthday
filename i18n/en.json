@@ -1,0 +1,4 @@
+{
+    "slashCommand.birthday.description": "Add or remove your birthday reminder",
+    "slashCommand.birthday.paramExample": "add / remove"
+}

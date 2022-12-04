@@ -9,7 +9,9 @@
 		"strictNullChecks": true,
 		"noImplicitReturns": true,
 		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true
-	},
-	"include": ["**/*.ts"]
+		"experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true
+    },
+    "include": ["**/*.ts"]
 }
