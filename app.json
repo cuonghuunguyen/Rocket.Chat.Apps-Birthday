@@ -1,0 +1,15 @@
+{
+    "id": "c294579a-3afd-4199-a675-14512de7c128",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.4.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Cuong Huu Nguyen",
+        "homepage": "https://github.com/cuonghuunguyen",
+        "support": "https://github.com/cuonghuunguyen/Rocket.Chat.Apps-Birthday/issues"
+    },
+    "name": "Rocket.Chat.Apps-Birtthday",
+    "nameSlug": "rocketchatapps-birtthday",
+    "classFile": "RocketChatAppsBirtthdayApp.ts",
+    "description": "Keep track of and celebrate birthdays amongst your team using the Birthday Bot!"
+}
