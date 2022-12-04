@@ -1,75 +1,75 @@
- {
-    root: true,
-    ignorePatterns: ["target/", "lib/"],
-    env: {
-        browser: true,
-        node: true,
-        jest: true
-    },
-    parser: "@typescript-eslint/parser",
-    extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/typescript",
-        "prettier"
-    ],
-    plugins: ["@typescript-eslint", "import"],
-    rules: {
-        "import/order": [
-            "error",
-            {
-                groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
-                pathGroups: [
-                    {
-                        pattern: "../**",
-                        group: "parent",
-                        position: "after"
-                    }
-                ],
-                "newlines-between": "always"
-            }
-        ],
-        "import/newline-after-import": ["error", { count: 1 }],
-        curly: "error",
-        "@typescript-eslint/naming-convention": [
-            "error",
-            {
-                selector: "interface",
-                format: ["PascalCase"]
-            }
-        ]
-    },
-    overrides: [
-        {
-            files: ["*.js"],
-            rules: {
-                "@typescript-eslint/no-require-imports": "off",
-                "@typescript-eslint/no-var-requires": "off"
-            }
-        },
-        {
-            files: ["*.test.tsx", "*.test.ts"],
-            rules: {
-                "no-alert": "off",
-                "no-console": "off",
-                "no-empty-pattern": "off",
-                "no-lone-blocks": "off",
-                "no-shadow": "off",
+{
+	"root": true,
+	"ignorePatterns": ["target/", "lib/"],
+	"env": {
+		"browser": true,
+		"node": true,
+		"jest": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/typescript",
+		"prettier"
+	],
+	"plugins": ["@typescript-eslint", "import"],
+	"rules": {
+		"import/order": [
+			"error",
+			{
+				"groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+				"pathGroups": [
+					{
+						"pattern": "../**",
+						"group": "parent",
+						"position": "after"
+					}
+				],
+				"newlines-between": "always"
+			}
+		],
+		"import/newline-after-import": ["error", { "count": 1 }],
+		"curly": "error",
+		"@typescript-eslint/naming-convention": [
+			"error",
+			{
+				"selector": "interface",
+				"format": ["PascalCase"]
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": ["*.js"],
+			"rules": {
+				"@typescript-eslint/no-require-imports": "off",
+				"@typescript-eslint/no-var-requires": "off"
+			}
+		},
+		{
+			"files": ["*.test.tsx", "*.test.ts"],
+			"rules": {
+				"no-alert": "off",
+				"no-console": "off",
+				"no-empty-pattern": "off",
+				"no-lone-blocks": "off",
+				"no-shadow": "off",
 
-                "@typescript-eslint/no-unused-expressions": "off",
-                "@typescript-eslint/no-unused-vars": "off",
-                "@typescript-eslint/no-use-before-define": "off",
-                "@typescript-eslint/ban-ts-comment": [
-                    "error",
-                    {
-                        "ts-ignore": "allow-with-description"
-                    }
-                ],
+				"@typescript-eslint/no-unused-expressions": "off",
+				"@typescript-eslint/no-unused-vars": "off",
+				"@typescript-eslint/no-use-before-define": "off",
+				"@typescript-eslint/ban-ts-comment": [
+					"error",
+					{
+						"ts-ignore": "allow-with-description"
+					}
+				],
 
-                "import/export": "off",
-                "import/prefer-default-export": "off"
-            }
-        }
-    ]
+				"import/export": "off",
+				"import/prefer-default-export": "off"
+			}
+		}
+	]
 }
