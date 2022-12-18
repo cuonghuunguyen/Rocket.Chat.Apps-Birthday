@@ -10,7 +10,17 @@ const defaultResource = {
 	birthdayForm_close_label: "Close",
 	birthdayForm_submit_label: "Add",
 	birthdayForm_error_general: "Error changing birthday config",
-	birthdayForm_error_input: "Invalid data, please check your input"
+	birthdayForm_error_input: "Invalid data, please check your input",
+	removeNotification_text: "We have removed your birthday successfully",
+	configNotification_text: "We have saved your birthday config successfully",
+	removeNotification_image_alt: "Success",
+	helpText: `
+### Birthday command
+
+Config notifications for your birthday in the current room. Usage:
+* \`/birthday config\`: Config your birthday and your birthday notification in the current room
+* \`/birthday remove\`: Remove your birthday in the database
+    `
 } as const;
 
 export type I18nKey = keyof typeof defaultResource;

@@ -60,3 +60,8 @@ export const saveShouldNotifyRoom = async (
 
 	return saveNotifiedRoomList(userId, Array.from(notifiedRooms), persistence);
 };
+
+export const eraseUserData = async (userId: string, persistence: IPersistence) => {
+	await persistence.removeByAssociations(getUserBirthdayAssociations(userId));
+	await persistence.removeByAssociations(getNotifiedRoomsAssociations(userId));
+};

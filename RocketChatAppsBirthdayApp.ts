@@ -26,6 +26,7 @@ import {
 } from "./uikit/birthday-form";
 import { getLocalizer } from "./helpers/localization-helper";
 import { saveBirthday, saveShouldNotifyRoom } from "./helpers/birthday-persistence-helper";
+import { renderConfigNotification } from "./uikit/config-notification";
 
 export class RocketChatAppsBirthdayApp extends App implements IUIKitInteractionHandler {
 	constructor(info: IAppInfo, logger: ILogger, accessors: IAppAccessors) {
@@ -85,6 +86,20 @@ export class RocketChatAppsBirthdayApp extends App implements IUIKitInteractionH
 					read.getPersistenceReader(),
 					persistence
 				);
+
+				const appUser = await read.getUserReader().getAppUser();
+
+				const notifiedRoom = await read.getRoomReader().getById(roomId);
+				if (notifiedRoom && appUser) {
+					const builder = modify
+						.getNotifier()
+						.getMessageBuilder()
+						.setRoom(notifiedRoom)
+						.setSender(appUser)
+						.setBlocks(renderConfigNotification({ blockBuilder: modify.getCreator().getBlockBuilder() }));
+
+					await modify.getNotifier().notifyUser(user, builder.getMessage());
+				}
 
 				return { success: true };
 			}
